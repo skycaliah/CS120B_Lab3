@@ -30,10 +30,16 @@ int main(void) {
 
     while (1) {
 	
-	    fuelInput = PINA;
+	    fuelInput = PINA & 0x0F;
 	    gasLight = 0x00;
 
-	    if ( fuelInput <= 0x02 ){
+	    if(fuelInput == 0x00){
+
+		gasLight = 0x00;
+
+	    }//empty tank
+
+	    else if ( fuelInput <= 0x02 && fuelInput > 0x00 ){
 	
 		    	PORTC = 0x20;
 			gasLight = 0x01;
