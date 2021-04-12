@@ -29,15 +29,17 @@ int main(void) {
 	unsigned char gasLight;
 	unsigned char seatbeltLightCheck;
 	unsigned char seatBeltLight;
+	unsigned char seatBeltOn;
 
     while (1) {
 	
 	    fuelInput = PINA & 0x0F;
 	    gasLight = 0x00;
 	    seatbeltLightCheck = PINA & 0x30;
-	    seatBeltLight = 0x00;	
+	    seatBeltLight = 0x00;
+            seatBeltOn = PINA & 0x40;	    
 
-	    if(seatbeltLightCheck == 0x30){
+	    if(seatbeltLightCheck == 0x30 && seatBeltOn != 0x40){
 		seatBeltLight = 0x01;
 		
 	    }//issue ligth warning

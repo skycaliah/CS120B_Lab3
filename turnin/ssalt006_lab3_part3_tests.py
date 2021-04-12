@@ -13,6 +13,12 @@ tests = [ {'description': 'PINA: 0x38 => PORTC: 0xBC',
     'expected': [('PORTC',0xC0)],
     },
 
+ {'description': 'PINA: 0x7F => PORTC: 0x3F',
+    'steps': [ {'inputs': [('PINA',0x7F)], 'iterations': 2 } ],
+    'expected': [('PORTC',0x3F)],
+    },
+
+
     ]
 #watch = ['count'k]
 
