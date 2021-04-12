@@ -35,7 +35,7 @@ int main(void) {
 
 	    if(fuelInput == 0x00){
 
-		gasLight = 0x00;
+		gasLight = 0x01;
 
 	    }//empty tank
 
